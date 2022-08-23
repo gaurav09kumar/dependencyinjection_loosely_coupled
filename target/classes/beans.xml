@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="missedCallServiceObject"
+		class="com.example.dependencyinjection_loosely_coupled.MissedCallService"></bean>
+	<bean id="dataServiceServiceObject"
+		class="com.example.dependencyinjection_loosely_coupled.DataService"></bean>
+	<bean id="helloTuneServiceObject"
+		class="com.example.dependencyinjection_loosely_coupled.HelloTuneService"></bean>
+
+	<!-- Dependency Injection -->
+	<bean id="servicerequest1"
+		class="com.example.dependencyinjection_loosely_coupled.Airtel">
+		<property name="service" ref="helloTuneServiceObject" />
+
+	</bean>
+
+
+</beans>
